@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
+<body class="loading" data-layout-color="light" data-leftbar-theme="default" data-layout-mode="fluid" data-rightbar-onstart="true" data-leftbar-compact-mode="fixed">
 <!-- Begin page -->
 <div class="wrapper">
     <!-- ========== Left Sidebar Start ========== -->
@@ -273,6 +273,9 @@
                 <label class="form-check-label" for="scrollable-check">Scrollable</label>
             </div>
 
+            <div class="d-grid mt-4">
+                <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
+            </div>
         </div> <!-- end padding-->
 
     </div>
@@ -292,8 +295,20 @@
 <!-- demo app -->
 <script src="{{asset('backend/assets/js/pages/demo.dashboard-projects.js')}}"></script>
 <!-- end demo js-->
-
+<script>
+    if(localStorage.getItem('themeCompact') !== null){
+        $('body').attr('data-leftbar-compact-mode',localStorage.getItem('themeCompact'));
+    }
+    if(localStorage.getItem('themeSidebar') !== null){
+        $('body').attr('data-leftbar-theme',localStorage.getItem('themeSidebar'));
+    }
+    if(localStorage.getItem('themeWidth') !== null){
+        $('body').attr('data-layout-mode',localStorage.getItem('themeWidth'));
+    }
+    if(localStorage.getItem('colorSchema') !== null){
+        $('body').attr('data-layout-color',localStorage.getItem('colorSchema'));
+    }
+</script>
 </body>
 
-<!-- Mirrored from coderthemes.com/hyper/saas/dashboard-projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 May 2022 20:22:33 GMT -->
 </html>
