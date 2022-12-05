@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="loading" data-layout-color="light" data-leftbar-theme="default" data-layout-mode="fluid" data-rightbar-onstart="true" data-leftbar-compact-mode="fixed">
+<body class="loading"  data-leftbar-theme="default" data-layout-mode="fluid" data-rightbar-onstart="true" data-leftbar-compact-mode="fixed">
 <!-- Begin page -->
 <div class="wrapper">
     <!-- ========== Left Sidebar Start ========== -->
@@ -296,6 +296,11 @@
 <script src="{{asset('backend/assets/js/pages/demo.dashboard-projects.js')}}"></script>
 <!-- end demo js-->
 <script>
+    document.body.removeAttribute('data-layout-color')
+    if(localStorage.getItem('colorSchema') !== null){
+        $('body').attr('data-layout-color',localStorage.getItem('themeCompact'));
+
+    }
     if(localStorage.getItem('themeCompact') !== null){
         $('body').attr('data-leftbar-compact-mode',localStorage.getItem('themeCompact'));
     }
@@ -305,9 +310,7 @@
     if(localStorage.getItem('themeWidth') !== null){
         $('body').attr('data-layout-mode',localStorage.getItem('themeWidth'));
     }
-    if(localStorage.getItem('colorSchema') !== null){
-        $('body').attr('data-layout-color',localStorage.getItem('colorSchema'));
-    }
+
 </script>
 </body>
 
