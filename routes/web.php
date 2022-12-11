@@ -15,7 +15,7 @@ use \App\Http\Controllers\Backend\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing');
 
 Auth::routes();
 
